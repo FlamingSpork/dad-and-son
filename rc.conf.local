@@ -1,0 +1,2 @@
+icmp_monitor_enable="YES"
+kld_list="dad"

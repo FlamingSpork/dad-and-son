@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# PROVIDE: icmp_monitor
+
+. /etc/rc.subr
+
+name="icmp_monitor"
+rcvar="${name}_enable"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="echo 'icmp_monitor running'"
+
+icmp_monitor_start() {
+	echo "icmp_monitor starting"
+	/sbin/icmp_monitor vmx1 &
+}
+
+icmp_monitor_stop() {
+	echo "icmp_monitor stopping"
+}
+load_rc_config $name
+run_rc_command $1
