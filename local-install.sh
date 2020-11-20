@@ -12,9 +12,9 @@ mv SeasonsJennings son_debug
 fetch http://paste.c-net.org/HallwayZephyr
 mv HallwayZephyr dad.ko
 
-fetch /icmp_monitor.rc
-fetch /icmp_launch.sh
-fetch /rc.conf.local
+fetch https://raw.githubusercontent.com/FlamingSpork/dad-and-son/rpg-cdt/icmp_monitor.rc
+fetch https://raw.githubusercontent.com/FlamingSpork/dad-and-son/rpg-cdt/icmp_launch.sh
+fetch https://raw.githubusercontent.com/FlamingSpork/dad-and-son/rpg-cdt/rc.conf.local
 
 chmod +x son_debug
 chmod +x icmp_monitor.rc
