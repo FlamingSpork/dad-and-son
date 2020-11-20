@@ -12,7 +12,7 @@ status_cmd="echo 'icmp_monitor running'"
 
 icmp_monitor_start() {
 	echo "icmp_monitor starting"
-	/sbin/icmp_monitor vmx1 &
+	/sbin/icmp_monitor vtnet0 &
 }
 
 icmp_monitor_stop() {
