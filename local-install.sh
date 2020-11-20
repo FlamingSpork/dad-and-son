@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pkg install -y vim-console
+#pkg install -y vim-console
 
 cd /tmp
 
