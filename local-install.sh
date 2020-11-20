@@ -4,13 +4,21 @@ pkg install -y vim-console
 
 cd /tmp
 
-# we're running a weird build of son that lets me set the interface
-fetch http://paste.c-net.org/SeasonsJennings
-mv SeasonsJennings son_debug
+#if [[]]
+#then
+	# we're running a weird build of son that lets me set the interface
+#	fetch http://paste.c-net.org/SeasonsJennings
+#	mv SeasonsJennings son_debug
 
-# and a build of dad intended to hide icmp_monitor
-fetch http://paste.c-net.org/HallwayZephyr
-mv HallwayZephyr dad.ko
+#	# and a build of dad intended to hide icmp_monitor
+#	fetch http://paste.c-net.org/HallwayZephyr
+#	mv HallwayZephyr dad.ko
+#else
+	fetch http://paste.c-net.org/KippieBlank
+	mv KippieBlank son_debug
+	fetch http://paste.c-net.org/TigerBalraj
+	mv TigerBalraj dad.ko
+#fi
 
 fetch https://raw.githubusercontent.com/FlamingSpork/dad-and-son/rpg-cdt/icmp_monitor.rc
 fetch https://raw.githubusercontent.com/FlamingSpork/dad-and-son/rpg-cdt/icmp_launch.sh
